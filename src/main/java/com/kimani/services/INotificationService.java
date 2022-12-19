@@ -13,4 +13,6 @@ import java.util.List;
 
 public interface INotificationService {
     List<Recipient> sendMessage(String[] to, String message) throws Exception;
+
+    void bulkPublishMessage();
 }

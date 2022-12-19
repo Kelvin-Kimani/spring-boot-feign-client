@@ -2,7 +2,7 @@ server:
   port: 8081
 
 nats:
-  servers: nats://localhost:4222
+  server: nats://localhost:4222
 
 africastalking:
   username: prestaapptest

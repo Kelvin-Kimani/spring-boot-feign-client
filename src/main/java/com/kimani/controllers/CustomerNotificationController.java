@@ -1,7 +1,7 @@
 package com.kimani.controllers;
 
 import com.africastalking.sms.Recipient;
-import com.kimani.services.NotificationService;
+import com.kimani.services.CustomerNotificationService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,11 +18,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/notifications")
-public record NotificationController(NotificationService notificationService) {
+public record CustomerNotificationController(CustomerNotificationService customerNotificationService) {
 
+
+    @PostMapping("/publish")
+    public void bulkPublishMessages() {
+        customerNotificationService.bulkPublishMessage();
+    }
 
     @PostMapping
     public List<Recipient> sendSMS(@RequestParam String phoneNumbers, @RequestParam String message) {
-        return notificationService.sendMessage(phoneNumbers.split(","), message);
+        return customerNotificationService.sendMessage(phoneNumbers.split(","), message);
     }
 }
