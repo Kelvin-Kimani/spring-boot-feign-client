@@ -22,10 +22,12 @@ import static java.util.Objects.nonNull;
 public class CustomerClientConfiguration {
 
     private final JWTService jwtService;
+    private final CustomErrorHandler customErrorHandler;
+
 
     @Bean
     public ErrorDecoder errorDecoder() {
-        return new CustomErrorHandler();
+        return customErrorHandler;
     }
 
     @Bean
