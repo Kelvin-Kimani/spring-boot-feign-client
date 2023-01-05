@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nats-client:
+    container_name: nats-client
+    image: nats
+    ports:
+      - '4222:4222'
+      - '8222:8222'
+    networks:
+      - nats-network
+    restart: unless-stopped
+
+networks:
+  nats-network:
+    driver: bridge
