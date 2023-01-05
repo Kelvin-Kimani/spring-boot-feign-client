@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 
-@FeignClient(name = "customerClient", url = "http://localhost:8080", configuration = CustomerClientConfiguration.class)
+@FeignClient(name = "customer-client", url = "http://localhost:8080", configuration = CustomerClientConfiguration.class)
 public interface CustomerClientService {
 
     @PostMapping("/api/v1/customers")

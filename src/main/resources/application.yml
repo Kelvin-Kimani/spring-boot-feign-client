@@ -7,3 +7,7 @@ nats:
 africastalking:
   username: prestaapptest
   apiKey: e354c4f1a5c1bd6a46cbdb147654eff66ac5f0b7aa35863f270f3edb951c3d6f
+
+logging:
+  level:
+    com.kimani.clients.CustomerClientService: DEBUG
